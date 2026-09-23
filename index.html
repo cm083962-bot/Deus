@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STT | Festa a Fantasia</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#090522;color:#fff}
+header{position:sticky;top:0;z-index:10;background:#0b0730eF;border-bottom:2px solid #ff2aaa;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:28px;font-weight:bold}.logo small{display:block;font-size:12px;color:#ffd52a}
+nav{display:flex;gap:22px}nav a{color:#fff;text-decoration:none;font-weight:bold}nav a:hover{color:#ff35ad}
+.hero{min-height:700px;padding:75px 8%;position:relative;overflow:hidden;background:radial-gradient(circle at 15% 20%,#7121a9,transparent 35%),radial-gradient(circle at 90% 30%,#df187e,transparent 30%),linear-gradient(135deg,#090522,#21053e)}
+.hero:before{content:"🎉  🎭  ✨  🎊  🎈  ✨  🎭";position:absolute;font-size:40px;opacity:.18;word-spacing:35px;line-height:2;transform:rotate(-12deg);width:120%;top:30px}
+.content{position:relative;z-index:2;max-width:650px}
+.tag{display:inline-block;background:#ff20a5;padding:11px 20px;font-weight:bold;transform:rotate(-2deg)}
+h1{font-size:clamp(55px,9vw,100px);line-height:.86;margin:25px 0}h1 span{color:#ffd52a}
+.subtitle{font-size:20px;line-height:1.5}
+.event{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px}
+.info{padding:18px;border:1px solid #b33cff;border-radius:14px;background:#160b43cc}.info b{display:block;color:#ffd52a;margin-bottom:7px}
+.count{margin-top:35px;padding:22px;border:2px solid #ff20b0;border-radius:20px;background:#10072dcc;text-align:center}
+.time{display:flex;justify-content:center;gap:28px;margin-top:15px}.time strong{display:block;font-size:34px;color:#ffd52a}.time small{font-size:10px}
+section{padding:75px 8%}.about{background:#fff7e5;color:#151044;display:grid;grid-template-columns:1fr 1fr;gap:45px}
+h2{font-size:46px;margin-bottom:20px}.about p{font-size:18px;line-height:1.6}.phrase{display:inline-block;background:#7024df;color:white;padding:14px 20px;border-radius:10px;margin-top:22px;font-weight:bold}
+.cards{display:flex;gap:15px}.card{text-align:center;padding:25px 12px;flex:1}.card .icon{font-size:50px}.card h3{margin:10px 0}
+.gallery{background:#090522}.gallery-box{min-height:280px;border:2px solid #a43aff;border-radius:20px;background:#170c40;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px}.camera{font-size:70px}.gallery-box h3{font-size:34px;margin:10px}
+.ia{background:#060319;display:grid;grid-template-columns:1fr 1fr;gap:20px}.box{background:#100a35;border:1px solid #713dff;border-radius:16px;padding:28px}.box h2{font-size:28px;color:#ff48b9}.box li,.box p{line-height:1.7;margin-bottom:10px}
+footer{padding:28px 8%;display:flex;justify-content:space-between;background:#050216}footer span{color:#ffd52a}
+.confete{position:fixed;top:-20px;width:9px;height:18px;z-index:99;animation:fall 2.5s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media(max-width:800px){header{flex-direction:column;gap:12px}nav{gap:12px;flex-wrap:wrap;justify-content:center}.hero{min-height:850px}.event{grid-template-columns:1fr}.count{margin-top:30px}.about,.ia{grid-template-columns:1fr}.cards{flex-direction:column}.time{gap:15px}footer{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">👑 STT<small>Snack Time Together</small></div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#festa">Festa</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#ia">IA</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="content">
+    <div class="tag">🎭 VEM AÍ A NOSSA</div>
+    <h1>FESTA A<br><span>FANTASIA!</span></h1>
+    <p class="subtitle">Prepare sua fantasia e venha viver um momento inesquecível com o STT!</p>
+
+    <div class="event" id="festa">
+      <div class="info">📅 <b>Data</b>Data a definir</div>
+      <div class="info">📍 <b>Local</b>A definir</div>
+      <div class="info">⏰ <b>Horário</b>A definir</div>
+    </div>
+
+    <div class="count">
+      <b>⏳ CONTAGEM REGRESSIVA</b>
+      <div class="time">
+        <div><strong id="d">00</strong><small>DIAS</small></div>
+        <div><strong id="h">00</strong><small>HORAS</small></div>
+        <div><strong id="m">00</strong><small>MINUTOS</small></div>
+        <div><strong id="s">00</strong><small>SEGUNDOS</small></div>
+      </div>
+      <small>O contador será ativado quando a data da festa for definida.</small>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div>
+    <h2>👑 Sobre o STT</h2>
+    <p>O <b>STT (Snack Time Together)</b> é um espaço para compartilhar momentos, criar memórias e aproveitar bons momentos juntos.</p>
+    <div class="phrase">Juntos fazemos tudo mais gostoso! ✨</div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="icon">👥</div><h3>Amizade</h3><p>Boa companhia.</p></div>
+    <div class="card"><div class="icon">🍕</div><h3>Lanches</h3><p>Comida e diversão.</p></div>
+    <div class="card"><div class="icon">🎵</div><h3>Diversão</h3><p>Momentos especiais.</p></div>
+  </div>
+</section>
+
+<section class="gallery" id="fotos">
+  <h2>📸 Galeria</h2>
+  <div class="gallery-box">
+    <div class="camera">📷</div>
+    <h3>Em Breve!</h3>
+    <p>As fotos da Festa a Fantasia serão adicionadas aqui depois do evento.</p>
+  </div>
+</section>
+
+<section class="ia" id="ia">
+  <div class="box">
+    <h2>🤖 Prompts usados</h2>
+    <ul>
+      <li>"Crie um site para o STT com tema Festa a Fantasia."</li>
+      <li>"Adicione contador, confetes e animações."</li>
+      <li>"Deixe o site responsivo para celular."</li>
+      <li>"Crie uma galeria com aviso Em Breve."</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>🧠 Reflexão sobre a IA</h2>
+    <p>A IA foi usada como parceira para sugerir estrutura, visual e funcionalidades.</p>
+    <p>As sugestões foram analisadas e adaptadas para combinar com a identidade do STT e deixar o código mais simples de apresentar.</p>
+  </div>
+</section>
+</main>
+
+<footer><b>👑 STT — Snack Time Together</b><span>Juntos é sempre mais divertido! 🎉</span></footer>
+
+<script>
+document.addEventListener("click",function(e){
+  for(let i=0;i<15;i++){
+    let c=document.createElement("div");
+    c.className="confete";
+    c.style.left=(e.clientX+Math.random()*120-60)+"px";
+    c.style.background=["#ff20a8","#ffd52a","#7b2cff","#19d6b0"][Math.floor(Math.random()*4)];
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),2500);
+  }
+});
+</script>
+</body>
+</html>
